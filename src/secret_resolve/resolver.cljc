@@ -12,7 +12,7 @@
   extracted here so it has exactly one implementation instead of being
   hand-copied per consumer (it had already been copied into at least two
   places before this library existed)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn resolve1
   "sources: {source-key (fn [ref] value-or-nil)}.
