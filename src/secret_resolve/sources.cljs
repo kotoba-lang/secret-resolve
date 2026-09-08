@@ -4,7 +4,7 @@
   (`security find-generic-password`). All subprocess calls go through
   `secret-resolve.exec/sh`, which is what actually fixes the stderr-leak
   and hang bugs — this ns only shapes the args and parses the output."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [secret-resolve.exec :as exec]))
 
 (defn env
