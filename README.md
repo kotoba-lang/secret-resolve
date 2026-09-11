@@ -65,7 +65,7 @@ place, instead of leaving every consumer to rediscover them.
 ## Layers
 
 - `secret-resolve.resolver` (`.cljc`, pure, no I/O) — the ordered-fallback
-  walk. Portable; unit-tested on the JVM (`clojure -M:test`) against fake
+  walk. Portable; unit-tested on the JVM (`kbb -M:test`) against fake
   sources with no subprocess calls at all.
 - `secret-resolve.exec` (`.cljs`, Node-only) — the safe `execFileSync`
   wrapper (explicit `:stdio`, default timeout, `maxBuffer`).
@@ -79,7 +79,7 @@ place, instead of leaving every consumer to rediscover them.
 Add this repo's `src` to your `--classpath` alongside your own:
 
 ```bash
-nbb --classpath "src:../secret-resolve/src" your_script.cljs
+kbb --backend sci --classpath "src:../secret-resolve/src" your_script.cljs
 ```
 
 (`../secret-resolve` assumes a sibling checkout under the same org, e.g.
@@ -88,7 +88,7 @@ both under `orgs/kotoba-lang/`; adjust the path otherwise.)
 ## Test
 
 ```bash
-clojure -M:test   # resolver.cljc pure-logic tests (portable, no subprocess calls)
+kbb -M:test   # resolver.cljc pure-logic tests (portable, no subprocess calls)
 ```
 
 ## Known limitations
